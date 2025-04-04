@@ -6,9 +6,103 @@
     <title>Flight Search</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script type="module" src="main.js"></script>
+    <script type="module" src="moduloRastreo.js"></script>
     
 </head>
 <body>
-
+    <div class="container">
+        <div class="header">
+            <video class="header"  src="storage/img/Find your Flight.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div style="position: relative; z-index: 2;" class="search-bar" inputmode="search">
+            <div class="plane-icon">
+                <img class="plane-icon" src="storage/img/plane.svg" alt="">
+            </div>
+            <input id="regis" type="text" placeholder="search" aria-label="Search for flights">
+            <button id="buscar">Buscar</button>
+        </div>
+        
+        <div class="flight-card">
+            <div class="flight-image">
+                <img id="imgAvion" src="" alt="">
+            </div>
+            
+            <div class="flight-details">
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <h3>Plane Status</h3>
+                        <p id="activee">inactive</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Registration Number</h3>
+                        <p id="reg">4X-EBM</p>
+                    </div>
+                </div>
+                
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <h3>Production Line</h3>
+                        <p id="productionLine">Boeing 737 Classic</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Plane Owner</h3>
+                        <p id="airlineName">Airwork Flight</p>
+                    </div>
+                </div>
+                
+                <div class="detail-row">
+                    <div class="detail-item">
+                        <h3>Engines Count</h3>
+                        <p id="numEngines">2 Engines</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Engines Type</h3>
+                        <p id="engineType">TURBOPROP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flight-route">
+            <div class="route-header">
+              <div class="origin">
+                <div id="icaoArrival" class="code">GUJ</div>
+                <div id="municipalityNameArrival" class="city">Gujarat</div>
+                <div id="nameArrival" class="airport">Sardar Patel Airport</div>
+              </div>
+              
+              <div class="destination">
+                <div id="icaoDeparture" class="code">MUM</div>
+                <div id="municipalityNameDeparture" class="city">Mumbai</div>
+                <div id="nameDeparture" class="airport">CSM Airport</div>
+              </div>
+            </div>
+            
+            <div class="flight-path">
+              <div class="dot origin-dot"></div>
+              <div class="line"></div>
+              <div class="airplane-icon-path"></div>
+              <div class="line"></div>
+              <div class="dot destination-dot"></div>
+              
+              <div class="duration">1h 20m</div>
+            </div>
+            
+            <div class="times">
+              <div class="depart">
+                <div class="label">Depart</div>
+                <div id="localDateDepart" class="date">Mon 15 Jul</div>
+                <div class="localDateDepart">09:30 AM</div>
+              </div>
+              
+              <div class="arrive">
+                <div class="label">Arrive</div>
+                <div id="localDateArrive" class="date">Mon 15 Jul</div>
+                <div id="localTimeArrive" class="time">11:45 AM</div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
 </body>
 </html>

@@ -1,1 +1,392 @@
-cos
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #000000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    position: relative;
+    width: 500px;
+    margin-bottom: -2px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.1;
+}
+
+.airplane-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+
+/* CSS airplane for the header */
+
+.search-bar {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.plane-icon {
+    /* Añadir esta propiedad a los estilos existentes */
+    flex-shrink: 0;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.search-bar input::placeholder {
+    color: white;
+    opacity: 1;
+}
+/* CSS plane icon for search bar */
+.plane-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.search-bar span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.flight-card {
+    background-color: #333;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.flight-image {
+    width: 100%;
+    height: 200px;
+    background-color: #555;
+    position: relative;
+}
+
+.flight-details {
+    padding: 15px;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.detail-item {
+    flex: 1;
+}
+
+.detail-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.detail-item p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        border-radius: 0;
+        height: 100%;
+        max-width: none;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .airplane-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-item {
+        margin-bottom: 15px;
+    }
+    
+    .detail-row:last-child .detail-item:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .detail-item h3 {
+        font-size: 14px;
+    }
+    
+    .detail-item p {
+        font-size: 12px;
+    }
+}
+
+#imgAvion {
+    width: 300px;
+    height: 200px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+
+
+
+
+
+
+.flight-route {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    top: 25px;
+    position: relative;
+  }
+  
+  .route-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .flight-route .origin,
+  .flight-route .destination {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flight-route .destination {
+    text-align: right;
+  }
+  
+  .flight-route .code {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .flight-route .city {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  
+  .flight-route .airport {
+    font-size: 0.8rem;
+    color: #ccc;
+  }
+  
+  .flight-path {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px 0;
+    margin: 10px 0;
+  }
+  
+  .flight-path .dot {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .flight-path .line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: transparent;
+    border-top: 2px dashed #fff;
+    margin: 0 5px;
+  }
+  
+  .flight-path .airplane-icon-path {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    position: relative;
+    z-index: 3;
+    clip-path: polygon(
+      50% 0%, 
+      90% 50%, 
+      50% 40%, 
+      10% 50%, 
+      50% 0%, 
+      50% 100%, 
+      40% 90%, 
+      60% 90%, 
+      50% 100%
+    );
+    transform: rotate(90deg);
+  }
+  
+  .flight-path .duration {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  
+  .times {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .times .depart,
+  .times .arrive {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .times .arrive {
+    text-align: right;
+  }
+  
+  .times .label {
+    color: #999;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
+  
+  .times .date {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+  }
+  
+  .times .time {
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 480px) {
+    .flight-route {
+      padding: 25px;
+      top: 25px;
+      position: relative;
+    }
+    
+    .flight-route .code {
+      font-size: 2.2rem;
+    }
+    
+    .flight-route .city {
+      font-size: 1.2rem;
+    }
+    
+    .flight-route .airport {
+      font-size: 0.9rem;
+    }
+    
+    .flight-path .dot {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .flight-path .airplane-icon-path {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .flight-path .duration {
+      font-size: 1.2rem;
+    }
+    
+    .times .label {
+      font-size: 0.9rem;
+    }
+    
+    .times .date {
+      font-size: 1rem;
+    }
+
+  }
+  
+  @media (min-width: 768px) {
+    .flight-route {
+      padding: 30px;
+    }
+    
+    .flight-route .code {
+      font-size: 2.5rem;
+    }
+    
+    .flight-route .city {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+    
+    .flight-route .airport {
+      font-size: 1rem;
+    }
+    
+    .flight-path {
+      padding: 25px 0;
+      margin: 15px 0;
+    }
+    
+    .flight-path .line {
+      margin: 0 15px;
+    }
+    
+  }
