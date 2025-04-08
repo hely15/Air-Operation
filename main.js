@@ -20,14 +20,15 @@ document.getElementById("buscar").addEventListener("click", async function () {
     
     let vueloSeleccionado;
     if (resultadoVuelo.length > 1) {
-      // Hay varios elementos: tomar el último
       vueloSeleccionado = resultadoVuelo[resultadoVuelo.length - 1];
     } else {
-      // Solo hay un elemento: tomar el primero (o único)
       vueloSeleccionado = resultadoVuelo[0];
     }
-    // Mostrar los datos del vuelo seleccionado
     mostrarDatosVuelo(vueloSeleccionado);
+    
+
+    localStorage.setItem("Vuelo1", matricula)
+
     
 
 

@@ -1,3 +1,4 @@
+// Se realiza la peticion al api para que devuelva los datos de la aeronave
 export async function obtenerDatosAeronave(matricula) {
     const url = `https://aerodatabox.p.rapidapi.com/aircrafts/reg/${matricula}?withRegistrations=true&withImage=true`;
 
@@ -15,8 +16,7 @@ export async function obtenerDatosAeronave(matricula) {
 }
 
 
-
-
+// Se realiza la peticion al api para que devuelva los datos del vuelo si el aeronave se encuentra en vuelo
 export async function obtenerDatosDeVuelo(matriculaVuelo) {
     const url = `https://aerodatabox.p.rapidapi.com/flights/reg/${matriculaVuelo}?withAircraftImage=false&withLocation=true`;
 

@@ -17,7 +17,7 @@ export function mostrarDatosAeronave(data) {
   
     const engineTypeCont = document.getElementById("engineType");
     engineTypeCont.innerText = data?.engineType;
-  
+   
     const imgAvion = data?.image?.url;
     const imgAvionCont = document.getElementById("imgAvion");
     if (imgAvionCont) {
@@ -64,9 +64,6 @@ export function mostrarDatosVuelo(dataVuerlo) {
 
 
 
-
-
-
     const iataDepartureCont = document.getElementById("iataDeparture");
     iataDepartureCont.innerText = dataVuerlo?.departure?.airport?.iata
 
@@ -77,5 +74,7 @@ export function mostrarDatosVuelo(dataVuerlo) {
     nameDepartureCont.innerText = dataVuerlo?.departure?.airport?.name
 
 
+    const distance = document.getElementById("distance")
+    distance.innerText = parseInt(dataVuerlo?.greatCircleDistance?.km)+"km"
 
 }
