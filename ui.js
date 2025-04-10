@@ -33,14 +33,14 @@ export function mostrarDatosAeronave(data) {
 }
 
 export function mostrarDatosVuelo(dataVuerlo) {
-    const iataArrivalCont = document.getElementById("iataArrival");
-    iataArrivalCont.innerText = dataVuerlo?.arrival?.airport?.iata
+    const iataDepartCont = document.getElementById("iataDepart");
+    iataDepartCont.innerText = dataVuerlo?.departure?.airport?.iata
 
-    const municipalityNameArrivalCont = document.getElementById("municipalityNameArrival")
-    municipalityNameArrivalCont.innerText = dataVuerlo?.arrival?.airport?.municipalityName
+    const municipalityNameDepartCont = document.getElementById("municipalityNameDepart")
+    municipalityNameDepartCont.innerText = dataVuerlo?.departure?.airport?.municipalityName
 
-    const nameArrivalCont = document.getElementById("nameArrival")
-    nameArrivalCont.innerText = dataVuerlo?.arrival?.airport?.name
+    const nameDepartCont = document.getElementById("nameDepart")
+    nameDepartCont.innerText = dataVuerlo?.departure?.airport?.name
 
 
     const dateTimeStr = dataVuerlo?.arrival?.scheduledTime?.local;
@@ -64,17 +64,19 @@ export function mostrarDatosVuelo(dataVuerlo) {
 
 
 
-    const iataDepartureCont = document.getElementById("iataDeparture");
-    iataDepartureCont.innerText = dataVuerlo?.departure?.airport?.iata
+    const iataArrivalCont = document.getElementById("iataArrival");
+    iataArrivalCont.innerText = dataVuerlo?.arrival?.airport?.iata
 
-    const municipalityNameDepartureCont = document.getElementById("municipalityNameDeparture")
-    municipalityNameDepartureCont.innerText = dataVuerlo?.departure?.airport?.municipalityName
+    const municipalityNameArrivalCont = document.getElementById("municipalityNameArrival")
+    municipalityNameArrivalCont.innerText = dataVuerlo?.arrival?.airport?.municipalityName
 
-    const nameDepartureCont = document.getElementById("nameDeparture")
-    nameDepartureCont.innerText = dataVuerlo?.departure?.airport?.name
+    const nameArrivalCont = document.getElementById("nameArrival")
+    nameArrivalCont.innerText = dataVuerlo?.arrival?.airport?.name
 
 
     const distance = document.getElementById("distance")
     distance.innerText = parseInt(dataVuerlo?.greatCircleDistance?.km)+"km"
 
 }
+
+

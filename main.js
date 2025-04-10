@@ -26,8 +26,8 @@ document.getElementById("buscar").addEventListener("click", async function () {
     }
     mostrarDatosVuelo(vueloSeleccionado);
     
-
-    localStorage.setItem("Vuelo1", matricula)
+    
+  
 
     
 
