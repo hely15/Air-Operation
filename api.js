@@ -1,4 +1,5 @@
-import {flightCardHTML} from "./html.js";
+import { flightCardHTML } from "./html.js";
+import { flightRoute } from "./html.js";
 
 // Se realiza la peticion al api para que devuelva los datos de la aeronave
 
@@ -9,24 +10,22 @@ export async function obtenerDatosAeronave(matricula) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': 'adf56af1d5msh7651ecdbb937c21p19894fjsn1347a7d8066d',
+            'x-rapidapi-key': 'b501620487msh33f8e117c2cc161p1268e2jsnc9f30942bb62',
             'x-rapidapi-host': 'aerodatabox.p.rapidapi.com'
         }
     }
 
     const response = await fetch(url, options);
-    if (response.ok) { 
-        console.log("La respuesta fue 200 OK o exitosa.");
+    if (response.ok) {
         const result = await response.json();
         localStorage.setItem("ultimoVuelo", matricula)
+        const searchBar = document.querySelector('.ultimoVuelo');
+        searchBar.insertAdjacentHTML('afterend', flightCardHTML);
         return result;
-        
-      } else {
-        console.error(`Error en la petición: ${response.status}`);
 
-        const eliminarEstilos = document.getElementById("flight-card")
-        eliminarEstilos.remove()
-      }
+    } else {
+        console.log("hola")
+    }
 }
 
 
@@ -37,14 +36,21 @@ export async function obtenerDatosDeVuelo(matriculaVuelo) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': 'adf56af1d5msh7651ecdbb937c21p19894fjsn1347a7d8066d',
+            'x-rapidapi-key': 'b501620487msh33f8e117c2cc161p1268e2jsnc9f30942bb62',
             'x-rapidapi-host': 'aerodatabox.p.rapidapi.com'
         }
     };
     const responseVuelo = await fetch(url, options);
-    const resultVuelo = await responseVuelo.json();
-    console.log(resultVuelo);
-    return resultVuelo;
+    if (responseVuelo.ok) {
+        const resultVuelo = await responseVuelo.json();
+        console.log(resultVuelo);
+        const flightCard = document.querySelector('.flight-card')
+
+        flightCard.insertAdjacentHTML('afterend', flightRoute);
+        return resultVuelo;
+    }else {
+        console.log("hola")
+    }
 
 }
 
@@ -56,20 +62,20 @@ export async function buscarAereopuertos(codigoIcao) {
     const options = {
         method: 'GET',
         headers: {
-            'x-rapidapi-key': 'adf56af1d5msh7651ecdbb937c21p19894fjsn1347a7d8066d',
+            'x-rapidapi-key': 'b501620487msh33f8e117c2cc161p1268e2jsnc9f30942bb62',
             'x-rapidapi-host': 'aerodatabox.p.rapidapi.com'
         }
     };
     const response = await fetch(url, options);
-    if (response.ok) { 
+    if (response.ok) {
         console.log("La respuesta fue 200 OK o exitosa.");
         const result = await response.json();
         localStorage.setItem("ultimoAereopuerto", matricula)
         return result;
-        
-      } else {
+
+    } else {
         console.error(`Error en la petición: ${response.status}`);
-      }
+    }
 
 
 

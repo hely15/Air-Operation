@@ -1,409 +1,498 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #1a1a1a;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
 }
 
 .container {
-    width: 100%;
-    max-width: 500px;
-    background-color: #000000;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1370px;
+  background-color: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header {
-    position: relative;
-    width: 500px;
-    margin-bottom: -2px;
+  position: relative;
+  width: 100%;
+  max-width: 1370px;
+  margin-bottom: -2px;
+}
+
+.header video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-    line-height: 1.1;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.1;
 }
 
 .airplane-icon {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    width: 60px;
-    height: 60px;
-    border-radius: 5px;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  transform: translateY(-50%);
 }
 
-/* CSS airplane for the header */
-
+/* Search bar styles */
 .search-bar {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 30px;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+  z-index: 2;
 }
 
 .plane-icon {
-    /* Añadir esta propiedad a los estilos existentes */
-    flex-shrink: 0;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  position: relative;
 }
 
 .search-bar input {
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
 }
 
 .search-bar input::placeholder {
-    color: white;
-    opacity: 1;
-}
-/* CSS plane icon for search bar */
-.plane-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
-    position: relative;
+  color: white;
+  opacity: 1;
 }
 
-.search-bar span {
-    font-size: 18px;
-    font-weight: 500;
+.search-bar button {
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
+.search-bar button:hover {
+  background-color: #666;
+}
+
+/* Flight card styles */
 .flight-card {
-    background-color: #333;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #333;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
 }
 
 .flight-image {
-    width: 100%;
-    height: 200px;
-    background-color: #555;
-    position: relative;
+  background-color: #555;
+  position: relative;
 }
 
 .flight-details {
-    padding: 15px;
+  padding: 15px;
 }
 
 .detail-row {
-    display: flex;
-    margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .detail-row:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .detail-item {
-    flex: 1;
+  flex: 1;
 }
 
 .detail-item h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: white;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: white;
 }
 
 .detail-item p {
-    font-size: 14px;
-    color: #ccc;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    .container {
-        border-radius: 0;
-        height: 100%;
-        max-width: none;
-    }
-    
-    .header h1 {
-        font-size: 2rem;
-    }
-    
-    .airplane-icon {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .detail-row {
-        flex-direction: column;
-    }
-    
-    .detail-item {
-        margin-bottom: 15px;
-    }
-    
-    .detail-row:last-child .detail-item:last-child {
-        margin-bottom: 0;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .detail-item h3 {
-        font-size: 14px;
-    }
-    
-    .detail-item p {
-        font-size: 12px;
-    }
+  font-size: 14px;
+  color: #ccc;
 }
 
 #imgAvion {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
+  width: 100%;
+  object-fit: cover;
 }
 
+/* Flight route styles */
+.flightRoute {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 25px auto 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+}
 
-.flight-route {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    top: 25px;
-    position: relative;
-  }
-  
-  .route-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .flight-route .origin,
-  .flight-route .destination {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .flight-route .destination {
-    text-align: right;
-  }
-  
-  .flight-route .code {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-  
-  .flight-route .city {
-    font-size: 1rem;
-    margin-bottom: 3px;
-  }
-  
-  .flight-route .airport {
-    font-size: 0.8rem;
-    color: #ccc;
-  }
-  
-  .flight-path {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 15px 0;
-    margin: 10px 0;
-  }
-  
-  .flight-path .dot1{
-    width: 16px;
-    height: 16px;
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flightRoute .origin,
+.flightRoute .destination {
+  display: flex;
+  flex-direction: column;
+}
+
+.flightRoute .destination {
+  text-align: right;
+}
+
+.flightRoute .code {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.flightRoute .city {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.flightRoute .airport {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.flight-path {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 15px 0;
+  margin: 10px 0;
+}
+
+.flight-path .dot1,
+.flight-path .dot {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.destination-dot {
+  animation: blinkGreen 1s infinite;
+}
+
+@keyframes blinkGreen {
+  0% {
     background-color: #fff;
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
   }
-  .flight-path .dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
+  50% {
+    background-color: green;
   }
-  
-  .destination-dot {
-    animation: blinkGreen 1s infinite;
+  100% {
+    background-color: #fff;
   }
-  
-  @keyframes blinkGreen {
-    0% {
-    }
-    50% {
-      background-color: green;
-    }
-    100% {
-    }
+}
+
+.flight-path .line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: transparent;
+  border-top: 2px dashed #fff;
+  margin: 0 5px;
+}
+
+.flight-path .airplane-icon-path {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+  clip-path: polygon(50% 0%, 90% 50%, 50% 40%, 10% 50%, 50% 0%, 50% 100%, 40% 90%, 60% 90%, 50% 100%);
+  transform: rotate(90deg);
+}
+
+.flight-path .duration {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  padding: 0 10px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.times .depart,
+.times .arrive {
+  display: flex;
+  flex-direction: column;
+}
+
+.times .arrive {
+  text-align: right;
+}
+
+.times .label {
+  color: #999;
+  font-size: 0.8rem;
+  margin-bottom: 3px;
+}
+
+.ultimoVuelo{
+  position: relative;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 90%;
+  left: 5%;
+  margin-bottom: 25px;
+
+}
+.vuelo{
+  background-color: #333;
+  border: none;
+  width: 100%;
+}
+/* Responsive styles for all devices */
+
+/* Smartwatch (very small screens) */
+@media (max-width: 280px) {
+  body {
+    padding: 5px;
   }
 
+  .search-bar {
+    padding: 8px 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .search-bar button {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .flight-card,
+  .flightRoute {
+    width: 95%;
+  }
+
+  .detail-row {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    margin-bottom: 10px;
+  }
+
+  .detail-item h3 {
+    font-size: 14px;
+  }
+
+  .detail-item p {
+    font-size: 12px;
+  }
+
+  .flightRoute .code {
+    font-size: 1.2rem;
+  }
+
+  .flightRoute .city {
+    font-size: 0.8rem;
+  }
+
+  .flightRoute .airport {
+    font-size: 0.7rem;
+  }
+
+  .flight-path .dot1,
+  .flight-path .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .flight-path .airplane-icon-path {
+    width: 20px;
+    height: 20px;
+  }
+
+  .flight-path .duration {
+    font-size: 0.7rem;
+  }
+}
+
+/* Small mobile phones */
+@media (min-width: 281px) and (max-width: 375px) {
+  .search-bar {
+    padding: 10px 15px;
+  }
+
+  .search-bar input {
+    font-size: 16px;
+  }
+
+  .detail-row {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    margin-bottom: 12px;
+  }
+
+  .flightRoute .code {
+    font-size: 1.5rem;
+  }
+
+  .flightRoute .city {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (min-width: 376px) and (max-width: 480px) {
+  .container {
+    border-radius: 8px;
+  }
+
+  .detail-row {
+    flex-direction: column;
+  }
+
+  .detail-item {
+    margin-bottom: 15px;
+  }
+
+  .flightRoute {
+    padding: 15px;
+  }
+
+  .flightRoute .code {
+    font-size: 1.6rem;
+  }
+}
+
+/* Large phones and small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .detail-item h3 {
+    font-size: 14px;
+  }
+
+  .detail-item p {
+    font-size: 12px;
+  }
+
+  .flightRoute {
+    padding: 20px;
+  }
+
+  .flightRoute .code {
+    font-size: 2rem;
+  }
+
+  .flightRoute .city {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablets and small laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .flightRoute {
+    padding: 25px;
+  }
+
+  .flightRoute .code {
+    font-size: 2.2rem;
+  }
+
+  .flight-path {
+    padding: 20px 0;
+  }
+}
+
+/* Laptops and desktops */
+@media (min-width: 1025px) {
+  .flightRoute {
+    padding: 30px;
+  }
+
+  .flightRoute .code {
+    font-size: 2.5rem;
+  }
+
+  .flightRoute .city {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  .flightRoute .airport {
+    font-size: 1rem;
+  }
+
+  .flight-path {
+    padding: 25px 0;
+    margin: 15px 0;
+  }
 
   .flight-path .line {
-    flex-grow: 1;
-    height: 2px;
-    background-color: transparent;
-    border-top: 2px dashed #fff;
-    margin: 0 5px;
+    margin: 0 15px;
   }
-  
-  .flight-path .airplane-icon-path {
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    position: relative;
-    z-index: 3;
-    clip-path: polygon(
-      50% 0%, 
-      90% 50%, 
-      50% 40%, 
-      10% 50%, 
-      50% 0%, 
-      50% 100%, 
-      40% 90%, 
-      60% 90%, 
-      50% 100%
-    );
-    transform: rotate(90deg);
-  }
-  
-  .flight-path .duration {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    padding: 0 10px;
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-  
-  .times {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .times .depart,
-  .times .arrive {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .times .arrive {
-    text-align: right;
-  }
-  
-  .times .label {
-    color: #999;
-    font-size: 0.8rem;
-    margin-bottom: 3px;
-  }
-  
-  .times .date {
-    font-size: 0.9rem;
-    margin-bottom: 3px;
-  }
-  
-  .times .time {
-    font-weight: bold;
-  }
-  
-  /* Responsive adjustments */
-  @media (min-width: 480px) {
-    .flight-route {
-      padding: 25px;
-      top: 25px;
-      position: relative;
-    }
-    
-    .flight-route .code {
-      font-size: 2.2rem;
-    }
-    
-    .flight-route .city {
-      font-size: 1.2rem;
-    }
-    
-    .flight-route .airport {
-      font-size: 0.9rem;
-    }
-    
-    .flight-path .dot {
-      width: 20px;
-      height: 20px;
-    }
-    
-    .flight-path .airplane-icon-path {
-      width: 40px;
-      height: 40px;
-    }
-    
-    .flight-path .duration {
-      font-size: 1.2rem;
-    }
-    
-    .times .label {
-      font-size: 0.9rem;
-    }
-    
-    .times .date {
-      font-size: 1rem;
-    }
-
-  }
-  
-  @media (min-width: 768px) {
-    .flight-route {
-      padding: 30px;
-    }
-    
-    .flight-route .code {
-      font-size: 2.5rem;
-    }
-    
-    .flight-route .city {
-      font-size: 1.3rem;
-      margin-bottom: 5px;
-    }
-    
-    .flight-route .airport {
-      font-size: 1rem;
-    }
-    
-    .flight-path {
-      padding: 25px 0;
-      margin: 15px 0;
-    }
-    
-    .flight-path .line {
-      margin: 0 15px;
-    }
-    
-  }
+}

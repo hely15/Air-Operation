@@ -23,7 +23,6 @@ export function mostrarDatosAeronave(data) {
     if (imgAvionCont) {
       imgAvionCont.src = imgAvion;
       imgAvionCont.style.width = "100%";
-      imgAvionCont.style.height = "200px";
     }
   }
   
@@ -78,5 +77,4 @@ export function mostrarDatosVuelo(dataVuerlo) {
     distance.innerText = parseInt(dataVuerlo?.greatCircleDistance?.km)+"km"
 
 }
-
 
