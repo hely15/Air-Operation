@@ -65,3 +65,15 @@ document.getElementById("ultimoVuelo").addEventListener("click", async () => {
     console.error("Error al obtener datos del último vuelo:", error)
   }
 })
+
+document.getElementById("limpiarHistorial").addEventListener("click", () => {
+  const flightCard = document.getElementById("flight-card")
+  if (flightCard) {
+    flightCard.remove()
+  }
+
+  const flightRoute = document.getElementById("flight-Route")
+  if (flightRoute) {
+    flightRoute.remove()
+  }
+})

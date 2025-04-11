@@ -289,7 +289,7 @@ body {
   margin-bottom: 3px;
 }
 
-.ultimoVuelo{
+.ultimoVuelo {
   position: relative;
   background-color: #333;
   color: white;
@@ -299,13 +299,52 @@ body {
   text-align: center;
   width: 90%;
   left: 5%;
-  margin-bottom: 25px;
-
 }
-.vuelo{
+.vuelo {
   background-color: #333;
   border: none;
   width: 100%;
+}
+.vuelo:hover {
+  background-color: #444;
+  transform: scale(1.02);
+}
+
+.limpiar {
+  background-color: #333;
+  border: none;
+  color: #ff6b6b;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 8px;
+  position: relative;
+  left: 60.5svw;
+}
+
+.limpiar:hover {
+  background-color: #444;
+  transform: scale(1.02);
+}
+
+.limpiar h2 {
+  font-size: 1rem;
+}
+
+/* Ajustar el contenedor para los botones */
+.ultimoVuelo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 90%;
+  left: 5%;
+  margin-bottom: 20px;
 }
 /* Responsive styles for all devices */
 
