@@ -29,13 +29,19 @@ document.getElementById("buscar").addEventListener("click", async () => {
     }
     mostrarDatosVuelo(vueloSeleccionado)
   } catch (error) {
+    console.error("Error en la búsqueda:", error)
     mostrarError("No existe el registro")
 
-    const eliminarEstilos = document.getElementById("flight-card")
-    eliminarEstilos.remove()
+    // En lugar de eliminar los elementos, verificamos si existen y los ocultamos
+    const flightCard = document.getElementById("flight-card")
+    if (flightCard) {
+      flightCard.style.display = "none"
+    }
 
-    const eliminarflightRoute = document.getElementById("flight-Route")
-    eliminarflightRoute.remove()
+    const flightRoute = document.getElementById("flight-Route")
+    if (flightRoute) {
+      flightRoute.style.display = "none"
+    }
   }
 })
 
@@ -69,11 +75,11 @@ document.getElementById("ultimoVuelo").addEventListener("click", async () => {
 document.getElementById("limpiarHistorial").addEventListener("click", () => {
   const flightCard = document.getElementById("flight-card")
   if (flightCard) {
-    flightCard.remove()
+    flightCard.style.display = "none"
   }
 
   const flightRoute = document.getElementById("flight-Route")
   if (flightRoute) {
-    flightRoute.remove()
+    flightRoute.style.display = "none"
   }
 })
